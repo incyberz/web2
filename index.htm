@@ -1,0 +1,2207 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script>
+  const rupiah = (number) => {
+    return new Intl.NumberFormat("id-ID", {
+      style: "currency",
+      currency: "IDR"
+    }).format(number);
+  }
+</script>
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mutiara Medical Center</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="http://localhost/mcu/assets/img/favicon.png" rel="icon">
+  <link href="http://localhost/mcu/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="index_files/css.css" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="index_files/all.min.css" rel="stylesheet">
+  <link href="index_files/animate.min.css" rel="stylesheet">
+  <link href="index_files/bootstrap.min.css" rel="stylesheet">
+  <link href="index_files/bootstrap-icons.css" rel="stylesheet">
+  <link href="index_files/boxicons.min.css" rel="stylesheet">
+  <link href="index_files/glightbox.min.css" rel="stylesheet">
+  <link href="index_files/remixicon.css" rel="stylesheet">
+  <link href="index_files/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="index_files/style.css" rel="stylesheet">
+  <link href="index_files/radio-toolbar.css" rel="stylesheet">
+  <script src="index_files/jquery.min.js"></script>
+
+  <!-- =======================================================
+  * Template Name: Medilab
+  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+  /* ================================================ */
+  /* Revisions: 
+      v.1.0.8 - foto profil + hover 
+      v.1.0.7 - update debug class 
+      v.1.0.6 - log class 
+      v.1.0.5 - add sub_form class
+      v.1.0.4 - remove unnecessary classes
+  */
+  /* ================================================ */
+  a {
+    text-decoration: none
+  }
+
+  .consolas {
+    font-family: consolas !important
+  }
+
+  .log {
+    font-family: consolas;
+    font-style: italic;
+    font-size: 12px;
+    /* background: #ffc; */
+    display: inline-block;
+    margin: 5px 0;
+    color: #a5a;
+  }
+
+  /* ================================================ */
+  /* JUDUL */
+  /* ================================================ */
+  /* Sub Form :: Penanda Sub Form atau Nama File */
+  .sub_form,
+  .hasil_ajax {
+    font-family: consolas;
+    font-size: 10px;
+    margin-bottom: 5px;
+    color: #aaa;
+  }
+
+  /* ================================================ */
+  /* DEBUG */
+  /* ================================================ */
+  .hideit {
+    display: none
+  }
+
+  .debug {
+    margin-top: 200px !important;
+    color: darkred;
+    background: yellow;
+    font-family: consolas;
+    font-size: small;
+    padding: 5px;
+  }
+
+  /* ================================================ */
+  /* COLORING */
+  /* ================================================ */
+  .transparan {
+    border: none;
+    background: none
+  }
+
+  .biru,
+  .blue {
+    color: blue
+  }
+
+  .merah,
+  .red {
+    color: red
+  }
+
+  .hijau,
+  .green {
+    color: green
+  }
+
+  .kuning,
+  .yellow {
+    color: orange
+  }
+
+  .ungu,
+  .purple {
+    color: purple
+  }
+
+  .coklat,
+  .brown {
+    color: brown
+  }
+
+  .darkblue {
+    color: darkblue
+  }
+
+  .darkred {
+    color: darkred
+  }
+
+  .putih,
+  .white {
+    color: white
+  }
+
+  .hitam,
+  .black {
+    color: black
+  }
+
+  .darkabu {
+    color: #555
+  }
+
+  .abu,
+  .gray {
+    color: gray
+  }
+
+  .lightabu {
+    color: #aaa
+  }
+
+
+  /* ================================================ */
+  /* BACKGROUND */
+  /* ================================================ */
+  .gradasi-abu {
+    background: linear-gradient(#fff, #eee)
+  }
+
+  .gradasi-biru {
+    background: linear-gradient(#eef, #ccf)
+  }
+
+  .gradasi-toska {
+    background: linear-gradient(#eff, #cff)
+  }
+
+  .gradasi-hijau {
+    background: linear-gradient(#efe, #cfc)
+  }
+
+  .gradasi-merah {
+    background: linear-gradient(#fee, #fcc)
+  }
+
+  .gradasi-kuning {
+    background: linear-gradient(#ffe, #ffc)
+  }
+
+  .gradasi-pink {
+    background: linear-gradient(#fdf, #faf)
+  }
+
+  .gradasi-tulang {
+    background: linear-gradient(#ffe, rgb(213, 234, 233))
+  }
+
+  .bg-white,
+  .bg-putih {
+    background: white;
+  }
+
+  .bg-red {
+    background: red;
+  }
+
+  .bg-blue {
+    background: blue;
+  }
+
+  .bg-yellow {
+    background: yellow;
+  }
+
+  .bg-purple {
+    background: purple;
+  }
+
+  .bg-black {
+    background: black;
+  }
+
+  /* ================================================ */
+  /* TEXT-STYLING */
+  /* ================================================ */
+  .tebal,
+  .bold {
+    font-weight: bold
+  }
+
+  .small,
+  .kecil {
+    font-size: small
+  }
+
+  .big,
+  .besar {
+    font-size: 24px
+  }
+
+  .system {
+    font-family: consolas
+  }
+
+  .upper {
+    text-transform: uppercase
+  }
+
+  .lower {
+    text-transform: lowercase
+  }
+
+  .proper {
+    text-transform: capitalize
+  }
+
+  .miring {
+    font-style: italic
+  }
+
+  /* ================================================ */
+  /* BOX & NAVIGATION */
+  /* ================================================ */
+  .wadah {
+    border: solid 1px #ccc;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 15px;
+  }
+
+  .wadah_active,
+  .wadah-active {
+    border: solid 3px blue;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: linear-gradient(#efe, #cfc);
+  }
+
+  .tr_active,
+  .tr-active {
+    border: solid 4px blue;
+    font-weight: bold;
+  }
+
+  .navigasi a {
+    display: inline-block;
+    padding: 5px 15px;
+    background: linear-gradient(#eef, #cfc);
+    min-width: 50px;
+    text-align: center;
+    border-radius: 10px;
+    transition: .2s
+  }
+
+  .navigasi a:hover {
+    background: linear-gradient(#eef, #fcf);
+    letter-spacing: 1px;
+    text-transform: uppercase
+  }
+
+  /* ================================================ */
+  /* FONT CASE */
+  /* ================================================ */
+  .lower {
+    text-transform: lowercase
+  }
+
+  .upper {
+    text-transform: uppercase
+  }
+
+  .kapital,
+  .proper {
+    text-transform: capitalize
+  }
+
+  /* ================================================ */
+  /* FORM & TABLE */
+  /* ================================================ */
+  .form-group {
+    margin-top: 10px
+  }
+
+  .btn-block {
+    width: 100%
+  }
+
+  .form-ket,
+  .input-keterangan {
+    font-size: small;
+    color: gray;
+    margin: 10px 0 10px 10px
+  }
+
+  /* ================================================ */
+  /* EDITABLE */
+  /* ================================================ */
+  .editable {
+    background: linear-gradient(#efe, #cfc);
+    cursor: pointer;
+    transition: .2s
+  }
+
+  .editable:hover {
+    background: linear-gradient(#fef, #fcf);
+    letter-spacing: 1px
+  }
+
+  .deletable {
+    background: linear-gradient(#fee, #fcc);
+    cursor: pointer;
+    transition: .2s
+  }
+
+  .deletable:hover {
+    background: linear-gradient(#fef, #fcf);
+    letter-spacing: 1px
+  }
+
+  /* ================================================ */
+  /* ANIMATED */
+  /* ================================================ */
+  .pointer,
+  .closable {
+    cursor: pointer;
+  }
+
+  .zoom,
+  .img_zoom,
+  .img-zoom {
+    transition: .2s
+  }
+
+  .zoom:hover,
+  .img_zoom:hover,
+  .img-zoom:hover {
+    transform: scale(1.2);
+  }
+
+  /* ================================================ */
+  /* MARGINS */
+  /* ================================================ */
+  .m0 {
+    margin: 0
+  }
+
+  .m1 {
+    margin: 5px
+  }
+
+  .m2 {
+    margin: 10px
+  }
+
+  .m3 {
+    margin: 15px
+  }
+
+  .m4 {
+    margin: 20px
+  }
+
+  .mb1 {
+    margin-bottom: 5px
+  }
+
+  .mb2 {
+    margin-bottom: 10px
+  }
+
+  .mb3 {
+    margin-bottom: 15px
+  }
+
+  .mb4 {
+    margin-bottom: 20px
+  }
+
+  .mt1 {
+    margin-top: 5px
+  }
+
+  .mt2 {
+    margin-top: 10px
+  }
+
+  .mt3 {
+    margin-top: 15px
+  }
+
+  .mt4 {
+    margin-top: 20px
+  }
+
+  .ml1 {
+    margin-left: 5px
+  }
+
+  .ml2 {
+    margin-left: 10px
+  }
+
+  .ml3 {
+    margin-left: 15px
+  }
+
+  .ml4 {
+    margin-left: 20px
+  }
+
+  .mr1 {
+    margin-right: 5px
+  }
+
+  .mr2 {
+    margin-right: 10px
+  }
+
+  .mr3 {
+    margin-right: 15px
+  }
+
+  .mr4 {
+    margin-right: 20px
+  }
+
+  /* ================================================ */
+  /* PADDINGS */
+  /* ================================================ */
+  .p0 {
+    padding: 0
+  }
+
+  .p1 {
+    padding: 5px
+  }
+
+  .p2 {
+    padding: 10px
+  }
+
+  .p3 {
+    padding: 15px
+  }
+
+  .p4 {
+    padding: 20px
+  }
+
+  .pb1 {
+    padding-bottom: 5px
+  }
+
+  .pb2 {
+    padding-bottom: 10px
+  }
+
+  .pb3 {
+    padding-bottom: 15px
+  }
+
+  .pb4 {
+    padding-bottom: 20px
+  }
+
+  .pt1 {
+    padding-top: 5px
+  }
+
+  .pt2 {
+    padding-top: 10px
+  }
+
+  .pt3 {
+    padding-top: 15px
+  }
+
+  .pt4 {
+    padding-top: 20px
+  }
+
+  .pl1 {
+    padding-left: 5px
+  }
+
+  .pl2 {
+    padding-left: 10px
+  }
+
+  .pl3 {
+    padding-left: 15px
+  }
+
+  .pl4 {
+    padding-left: 20px
+  }
+
+  .pr1 {
+    padding-right: 5px
+  }
+
+  .pr2 {
+    padding-right: 10px
+  }
+
+  .pr3 {
+    padding-right: 15px
+  }
+
+  .pr4 {
+    padding-right: 20px
+  }
+
+  /* ================================================ */
+  /* ALIGNMENT */
+  /* ================================================ */
+  .kiri,
+  .left {
+    text-align: left
+  }
+
+  .kanan,
+  .right {
+    text-align: right
+  }
+
+  .tengah,
+  .center {
+    text-align: center
+  }
+
+
+  /* ================================================ */
+  /* BORDER | BORDER RADIUS */
+  /* ================================================ */
+  .bordered {
+    border: solid 1px #ccc
+  }
+
+  .border-merah {
+    border: solid 1px #f55
+  }
+
+  .border-biru {
+    border: solid 1px #55f
+  }
+
+  .border-hijau {
+    border: solid 1px #5f5
+  }
+
+  .br50 {
+    border-radius: 50%
+  }
+
+  .br5 {
+    border-radius: 5px
+  }
+
+  .br6 {
+    border-radius: 6px
+  }
+
+  .br7 {
+    border-radius: 7px
+  }
+
+  .br8 {
+    border-radius: 8px
+  }
+
+  .br9 {
+    border-radius: 9px
+  }
+
+  .br10 {
+    border-radius: 10px
+  }
+
+  .br11 {
+    border-radius: 11px
+  }
+
+  .br12 {
+    border-radius: 12px
+  }
+
+  .br13 {
+    border-radius: 13px
+  }
+
+  .br14 {
+    border-radius: 14px
+  }
+
+  .br15 {
+    border-radius: 15px
+  }
+
+
+  .f8 {
+    font-size: 8px
+  }
+
+  .f9 {
+    font-size: 9px
+  }
+
+  .f10 {
+    font-size: 10px
+  }
+
+  .f11 {
+    font-size: 11px
+  }
+
+  .f12 {
+    font-size: 12px
+  }
+
+  .f14 {
+    font-size: 14px
+  }
+
+  .f16 {
+    font-size: 16px
+  }
+
+  .f18 {
+    font-size: 18px
+  }
+
+  .f20 {
+    font-size: 20px
+  }
+
+  .f22 {
+    font-size: 22px
+  }
+
+  .f24 {
+    font-size: 24px
+  }
+
+  .f26 {
+    font-size: 26px
+  }
+
+  .f28 {
+    font-size: 28px
+  }
+
+  .f30 {
+    font-size: 30px
+  }
+
+  .f35 {
+    font-size: 35px
+  }
+
+  .f40 {
+    font-size: 40px
+  }
+
+  .f45 {
+    font-size: 45px
+  }
+
+  .f50 {
+    font-size: 50px
+  }
+
+  .f55 {
+    font-size: 55px
+  }
+
+  .f60 {
+    font-size: 60px
+  }
+
+  .f65 {
+    font-size: 65px
+  }
+
+  .f70 {
+    font-size: 70px
+  }
+
+  .f75 {
+    font-size: 75px
+  }
+
+  .f80 {
+    font-size: 80px
+  }
+
+  .f85 {
+    font-size: 85px
+  }
+
+  .f90 {
+    font-size: 90px
+  }
+
+  .f95 {
+    font-size: 95px
+  }
+
+  .f100 {
+    font-size: 100px
+  }
+
+
+  /* ================================================ */
+  /* FLEX */
+  /* ================================================ */
+  .flexy {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .flex-between {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .grid2 {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  .grid3 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+
+  .grid4 {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+  }
+
+  .grid5 {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+  }
+
+  .grid6 {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+  }
+
+  .foto_profil,
+  .foto-profil {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: solid 3px white;
+    box-shadow: 0px 0px 3px gray;
+    transition: .2s;
+    margin: 10px;
+    opacity: 75%;
+    cursor: pointer;
+  }
+
+  .foto_profil:hover,
+  .foto-profil:hover {
+    transform: scale(1.2);
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    opacity: 100%;
+  }
+</style><style>
+  .debug{display:none;}@media (max-width: 500px) {
+    .desktop-only {
+      display: none;
+    }
+  }
+
+  section {
+    padding-top: 140px;
+        /* min-height: 100vh; bahaya untuk section count */
+  }
+
+  #footer .footer-top {
+    padding: 0;
+  }
+</style>
+
+
+<style>
+  /*--------------------------------------------------------------
+# Tim
+--------------------------------------------------------------*/
+  .tim {
+    background: #fff;
+  }
+
+  .tim .member {
+    position: relative;
+    box-shadow: 0px 2px 15px rgba(44, 73, 100, 0.08);
+    padding: 30px;
+    border-radius: 10px;
+  }
+
+  .tim .member .pic {
+    overflow: hidden;
+    width: 180px;
+    border-radius: 50%;
+  }
+
+  .tim .member .pic img {
+    transition: ease-in-out 0.3s;
+  }
+
+  .tim .member:hover img {
+    transform: scale(1.1);
+  }
+
+  .tim .member .member-info {
+    padding-left: 30px;
+  }
+
+  .tim .member h4 {
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: #2c4964;
+  }
+
+  .tim .member span {
+    display: block;
+    font-size: 15px;
+    padding-bottom: 10px;
+    position: relative;
+    font-weight: 500;
+  }
+
+  .tim .member span::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: #b2c8dd;
+    bottom: 0;
+    left: 0;
+  }
+
+  .tim .member p {
+    margin: 10px 0 0 0;
+    font-size: 14px;
+  }
+
+  .tim .member .social {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .tim .member .social a {
+    transition: ease-in-out 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    width: 32px;
+    height: 32px;
+    background: #a0bcd5;
+  }
+
+  .tim .member .social a i {
+    color: #fff;
+    font-size: 16px;
+    margin: 0 2px;
+  }
+
+  .tim .member .social a:hover {
+    background: #1977cc;
+  }
+
+  .tim .member .social a+a {
+    margin-left: 8px;
+  }
+</style>
+
+<style>
+  .produk .icon-box {
+    text-align: center;
+    border: 1px solid #d5e1ed;
+    padding: 80px 20px;
+    transition: all ease-in-out 0.3s;
+  }
+
+  .produk .icon-box .icon {
+    margin: 0 auto;
+    width: 64px;
+    height: 64px;
+    background: #1977cc;
+    border-radius: 5px;
+    transition: all 0.3s ease-out 0s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transform-style: preserve-3d;
+    position: relative;
+    z-index: 2;
+  }
+
+  .produk .icon-box .icon i {
+    color: #fff;
+    font-size: 28px;
+    transition: ease-in-out 0.3s;
+  }
+
+  .produk .icon-box .icon::before {
+    position: absolute;
+    content: "";
+    left: -8px;
+    top: -8px;
+    height: 100%;
+    width: 100%;
+    background: rgba(25, 119, 204, 0.2);
+    border-radius: 5px;
+    transition: all 0.3s ease-out 0s;
+    transform: translateZ(-1px);
+    z-index: -1;
+  }
+
+  .produk .icon-box h4 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
+
+  .produk .icon-box h4 a {
+    color: #2c4964;
+  }
+
+  .produk .icon-box p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  .produk .icon-box:hover {
+    background: #1977cc;
+    border-color: #1977cc;
+  }
+
+  .produk .icon-box:hover .icon {
+    background: #fff;
+  }
+
+  .produk .icon-box:hover .icon i {
+    color: #1977cc;
+  }
+
+  .produk .icon-box:hover .icon::before {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .produk .icon-box:hover h4 a,
+  .produk .icon-box:hover p {
+    color: #fff;
+  }
+
+  /* my styles */
+  .img-mcu {
+    width: 280px;
+    height: 200px;
+    object-fit: cover;
+    margin: 0 0 15px 0;
+    transition: .2s;
+    border-radius: 10px;
+  }
+
+  .img-mcu:hover {
+    transform: scale(1.1);
+  }
+
+  .shout {
+    color: #33a;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: consolas;
+  }
+
+  .produk .icon-box:hover .shout {
+    color: #ff0;
+  }
+</style>
+
+
+<style>
+  .btn_aksi {
+    cursor: pointer;
+  }
+
+  .btn-edit-page {
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 35px;
+    margin-top: 10px;
+    border-radius: 50px;
+    transition: 0.5s;
+    color: #fff;
+    background: #844;
+    text-shadow: none;
+    text-align: center;
+  }
+
+  .btn-edit-page:hover {
+    background: #3291e6;
+    color: #ff0;
+  }
+
+  @media (max-width:400px) {
+    .btn-edit-page {
+      width: 100%;
+    }
+  }
+
+  .log {
+    background: yellow;
+  }
+
+  .btn-transparan {
+    border: none;
+    background: none;
+  }
+</style>
+
+<style>
+  .img-tim {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    transition: .2s;
+    border-radius: 50%;
+    border: solid 5px white;
+    box-shadow: 0 0 5px gray;
+    cursor: pointer;
+  }
+
+  @media (max-width:1024px) {
+    .img-tim {
+      border: solid 4px white;
+      width: 120px;
+      height: 120px;
+    }
+
+  }
+
+  @media (max-width:600px) {
+    .img-tim {
+      border: solid 3px white;
+      width: 90px;
+      height: 90px;
+    }
+
+  }
+
+  @media (max-width:360px) {
+    .img-tim {
+      border: solid 2px white;
+      width: 70px;
+      height: 70px;
+    }
+
+  }
+
+
+  /* SOCIAL SPAN OR LINK */
+  .tim .member .social div {
+    transition: ease-in-out 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    width: 32px;
+    height: 32px;
+    background: #d0bcd5;
+    margin-right: 10px;
+    cursor: no-drop;
+  }
+
+  .tim .member .social div i {
+    color: #fff;
+    font-size: 16px;
+    margin: 0 2px;
+  }
+
+  .tim .member .social div:hover {
+    background: #cc7719;
+  }
+</style>
+
+
+<style>
+  td {
+    background: none !important;
+  }
+</style></head>
+
+<body>
+
+  
+  <div id="topbar" class="d-flex align-items-center fixed-top topbar-scrolled">
+    <div class="container d-flex justify-content-between">
+      <div class="contact-info d-flex align-items-center">
+        <a href="mailto:info@mmc-clinic.com"><i class="bi bi-envelope"></i> <span class="desktop-only">info@mmc-clinic.com</span></a>
+        <i class="bi bi-phone desktop-only"></i> <span class="desktop-only">021-8909 5776</span>
+        <i class="bi bi-whatsapp"></i> <a href="https://api.whatsapp.com/send?phone=6287888129250&amp;text=Selamat%20Pagi%20Customer%20Service%20Mutiara%20Medical%20Center!%0a%0aSetelah%20melihat%20website%20Mutiara%20Medical%20Center,%20saya%20ingin%20bertanya%20perihal:%0a%0a" target="_blank" id="no_wa_marketing">6287888129250</a>
+      </div>
+      <div class="d-none d-lg-flex social-links align-items-center">
+        
+      </div>
+    </div>
+  </div>
+  <header id="header" class="fixed-top header-scrolled">
+  <div class="container d-flex align-items-center">
+
+    <h1 class="logo me-auto"><a href="http://localhost/mcu/index.html"></a><a href="http://localhost/mcu/index.php" class="logo me-auto"><img src="index_files/header_logo_240429021514.png" alt="MMC" class="img-fluid"></a></h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+        <li><a class="nav-link scrollto active" href="http://localhost/mcu/?">Home</a></li>
+        
+        <li><a class="nav-link scrollto" href="#why-us">Keunggulan</a></li>
+        <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
+        <li><a class="nav-link scrollto active" href="#produk">Paket MCU</a></li>
+        <li><a class="nav-link scrollto" href="#tim">Dokter dan Tim</a></li>
+        <li><a class="nav-link scrollto" href="#contact">Kontak</a></li>
+          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="#">Drop Down 1</a></li>
+            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+              <ul>
+                <li><a href="#">Deep Drop Down 1</a></li>
+                <li><a href="#">Deep Drop Down 2</a></li>
+                <li><a href="#">Deep Drop Down 3</a></li>
+                <li><a href="#">Deep Drop Down 4</a></li>
+                <li><a href="#">Deep Drop Down 5</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Drop Down 2</a></li>
+            <li><a href="#">Drop Down 3</a></li>
+            <li><a href="#">Drop Down 4</a></li>
+          </ul>
+        </li> -->
+        <li><a class="nav-link " href="http://localhost/mcu/?login">Login</a></li>      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+    <!-- <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a> -->
+
+  </div>
+</header><!-- End Header -->    <style>
+  #hero {
+    background: url("assets/img/hero-bg3.jpg") top center;
+    background-repeat: no-repeat;
+  }
+
+  #hero h1,
+  #hero h2 {
+    text-shadow: 2px 1px 3px white;
+  }
+</style>
+<style>#hero{background: url('assets/img/bg_hero_240430093313.jpg') top center no-repeat;}</style>
+<section id="hero" class="d-flex align-items-center">
+  <div class="container">
+    <h1 class="upper">Welcome to Mutiara Medical Center</h1>
+    <h2 style="max-width: 400px">Kami adalah Penyedia Jasa Layanan 
+Kesehatan Professional dan Komprehensif bidang Medical Checkup, In-House
+ Clinic, dan Klinik Pratama</h2>
+    <a href="#produk" class="btn-get-started scrollto">Program Kami</a>
+  </div>
+</section>
+
+
+  <main id="main">
+    
+<section id="why-us" class="why-us">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-lg-4 d-flex align-items-stretch">
+        <div class="content">
+          <h3>Mengapa Pilih Mutiara Medical Center?</h3>
+          <p>Target utama kami adalah <i>Corporate</i>, <i>basic-price</i>
+ fully negotiable. Kami memberikan biaya yang sangat terjangkau dan 
+kompetitif dengan kualitas layanan yang profesional. Peralatan lengkap, 
+onsite ke perusahaan, dokter yang berpengalaman, dan sistem informasi 
+medis online realtime menjadikan kami sebagai pilihan terbaik untuk 
+kebutuhan Pelayanan Kesehatan Anda.</p>
+          <!-- <div class='text-center'>
+            <a href='#' class='more-btn'>Learn More <i class='bx bx-chevron-right'></i></a>
+          </div> -->
+        </div>
+      </div>
+      <div class="col-lg-8 d-flex align-items-stretch">
+        <div class="icon-boxes d-flex flex-column justify-content-center">
+          <div class="row">
+    <div class="col-xl-4 d-flex align-items-stretch mb-4">
+      <div class="icon-box mt-4 mt-xl-0">
+        <i class="bx bx-check-shield"></i>
+        <h4>High Security Data Rekam Medis</h4>
+        <p>Data Rekam Medis Pasien kami jamin kerahasiaannya. Kami 
+menggunakan teknologi enkripsi untuk setiap data sensitive, memisahkan 
+data antar corporate (separated-database), dan data hanya dapat diakses 
+oleh pihak yang berwenang.</p>
+      </div>
+    </div>
+  
+  
+    <div class="col-xl-4 d-flex align-items-stretch mb-4">
+      <div class="icon-box mt-4 mt-xl-0">
+        <i class="bx bx-mobile"></i>
+        <h4>Realtime Reporting MCU</h4>
+        <p>Anda sebagai Corporate maupun karyawan (individual) dapat 
+memantau proses MCU dimulai proses pendaftaran, pemeriksaan, hingga 
+hasil MCU dengan login masing-masing via smartphone</p>
+      </div>
+    </div>
+  
+  
+    <div class="col-xl-4 d-flex align-items-stretch mb-4">
+      <div class="icon-box mt-4 mt-xl-0">
+        <i class="bx bx-dollar-circle"></i>
+        <h4>Biaya Sangat Terjangkau</h4>
+        <p>Basic Price dari kami adalah the best price bagi 
+Corporate/Lembaga Anda. Untuk biaya bersifat negotiable sesuai Jumlah 
+Peserta MCU dan lokasi perusahaan Anda! Silahkan Anda hubungi Marketing 
+kami dan buktikan!</p>
+      </div>
+    </div>
+  
+  
+    <div class="col-xl-4 d-flex align-items-stretch mb-4">
+      <div class="icon-box mt-4 mt-xl-0">
+        <i class="bx bx-car"></i>
+        <h4>Onsite ke Perusahaan</h4>
+        <p>Tidak perlu ada waktu yang terbuang! Dengan minimal 100 
+karyawan kami dapat melayani Medical Checkup di Perusahaan Anda 
+(onsite)!</p>
+      </div>
+    </div>
+  
+  
+    <div class="col-xl-4 d-flex align-items-stretch mb-4">
+      <div class="icon-box mt-4 mt-xl-0">
+        <i class="bx bx-medal"></i>
+        <h4>Program Pelayanan Medis</h4>
+        <p>Pengalaman kami lebih dari 20 tahun di bidang Pelayanan 
+Medis. Kami juga memiliki beberapa Klinik Pratama, In-House Clinic, 
+serta Fasilitas Medical Chec-kup dan Laboratorium Medis</p>
+      </div>
+    </div>
+  
+  
+    <div class="col-xl-4 d-flex align-items-stretch mb-4">
+      <div class="icon-box mt-4 mt-xl-0">
+        <i class="bx bx-cog"></i>
+        <h4>Peralatan Medis Lengkap</h4>
+        <p>Peralatan penunjang medis kami yang canggih dan terakreditasi
+ Paripurna membuat waktu pemeriksaan bagi Anda lebih cepat, efisien, dan
+ akurat.</p>
+      </div>
+    </div>
+  
+  </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+<style>
+  #tb_edit_visi td,
+  #edit_about td {
+    background: none;
+  }
+</style>
+
+  <style>
+    .about .video-box {
+      background: url('assets/img/tentang_video_bg_240501011816.jpg') center center no-repeat;
+    }
+  </style>
+  <section id="about" class="about">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
+          <a href="https://www.youtube.com/@ngampusonline" class="glightbox play-btn mb-4"></a>
+        </div>
+        <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
+          <h3>Tentang Mutiara Medical Center</h3>
+          <p>Kami adalah Penyedia Jasa Pelayanan Kesehatan Terpadu di Bekasi - Jawa Barat</p>
+          
+    <div class="icon-box">
+      <div class="icon"><i class="bx bx-star"></i></div>
+      <h4 class="title"><a href="">Visi</a></h4>
+      <p class="description">Profesional Akurat Selalu Dihati</p>
+    </div>
+  
+    <div class="icon-box">
+      <div class="icon"><i class="bx bx-calendar-star"></i></div>
+      <h4 class="title"><a href="">Misi</a></h4>
+      <ol class="description"><li>Memberikan pelayanan kesehatan masyarakat yang baik, aman, terukur serta terencana dan bertanggung jawab</li><li>Menyediakan sarana pelayanan kesehatan masyarakat yang profesional , mudah dijangkau dan ekonomis</li><li>Menciptakan
+ hubungan yang harmonis antara pengguna jasa layanan (pasien)  dengan 
+perusahaan (MMC) sehingga memberikan kepercayaan, loyalitas dan kepuasan
+ yang tinggi</li><li>Menjadikan Mutiara Medical Center sebagai bisnis 
+yang berkelanjutan dengan memperhatikan aspek profitabilitas, 
+kesejahteraan stakeholder dan ramah lingkungan</li></ol>
+    </div>
+  
+    <div class="icon-box">
+      <div class="icon"><i class="bx bx-history"></i></div>
+      <h4 class="title"><a href="">Sejarah</a></h4>
+      
+    </div>
+  
+    <div class="icon-box">
+      <div class="icon"><i class="bx bx-medal"></i></div>
+      <h4 class="title"><a href="">Goals</a></h4>
+      <ol class="description"><li>Mewujudkan pelayanan kesehatan yang profesion, akurat dan biaya yang ekonomis</li><li>Membantu perusahaan menjaga kesehatan karyawannya melalui layanan Medical Checkup yang efektif dan efisien</li><li>Meningkatkan kesadaran masyarakat akan pentingnya pemeriksaan kesehatan secara rutin</li><li>Berkontribusi dalam meningkatkan kualitas hidup masyarakat Indonesia</li></ol>
+    </div>
+  
+        </div>
+      </div>
+      
+    </div>
+  </section>
+<section id="counts" class="counts">
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-3 col-md-6">
+        <div class="count-box">
+          <i class="fas fa-user-md"></i>
+          <span data-purecounter-start="0" data-purecounter-end="17" data-purecounter-duration="0" class="purecounter">17</span>
+          <p>Dokter dan Tim</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+        <div class="count-box">
+          <i class="far fa-hospital"></i>
+          <span data-purecounter-start="0" data-purecounter-end="34" data-purecounter-duration="0" class="purecounter">34</span>
+          <p>Paket Layanan Pemeriksaan</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+        <div class="count-box">
+          <i class="fas fa-flask"></i>
+          <span data-purecounter-start="0" data-purecounter-end="132" data-purecounter-duration="0" class="purecounter">132</span>
+          <p>Lab dan Peralatan</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+        <div class="count-box">
+          <i class="fas fa-award"></i>
+          <span data-purecounter-start="0" data-purecounter-end="34150" data-purecounter-duration="0" class="purecounter">34150</span>
+          <p>Pasien Tahun 2024</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section><section id="produk" class="produk">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Program Kami</h2>
+      <p>Buktikan dan dapatkan harga terbaik paling terjangkau untuk semua program kami!</p>
+    </div>
+
+
+    <div class="row">
+      
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+              <div class="icon-box">
+                <h4>
+                  <a href="http://localhost/mcu/?program&amp;jenis=mcu">
+                    <img class="img-mcu" src="index_files/mcu-corporate.jpg" alt="mcu-corporate">
+                    <div>Program MCU</div>
+                  </a>
+                </h4>
+                <p><span class="shout"></span></p>
+                <p>Terdapat dua jenis Program Medical Checkup yang kami tawarkan yaitu MCU Corporate dan MCU Mandiri.</p>
+              </div>
+            </div>
+          
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+              <div class="icon-box">
+                <h4>
+                  <a href="http://localhost/mcu/?program&amp;jenis=inhouse-clinic">
+                    <img class="img-mcu" src="index_files/inhouse-clinic.avif" alt="mcu-corporate">
+                    <div>Program In-House Clinic</div>
+                  </a>
+                </h4>
+                <p><span class="shout"></span></p>
+                <p>Program In-House Clinic untuk Perusahaan, Sekolah, 
+atau Pesantren (Poskestren). Semua perlengkapan medis, dokter, dan tim 
+medis semua kami persiapkan untuk menyelenggarakan program ini di 
+lembaga Anda.</p>
+              </div>
+            </div>
+          
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+              <div class="icon-box">
+                <h4>
+                  <a href="http://localhost/mcu/?program&amp;jenis=klinik-pratama">
+                    <img class="img-mcu" src="index_files/klinik-pratama.avif" alt="mcu-corporate">
+                    <div>Klinik Pratama Mutiara</div>
+                  </a>
+                </h4>
+                <p><span class="shout"></span></p>
+                <p>Kami melayani Poli Umum, Poli Gigi, Klinik Bersalin, dan UGD.</p>
+              </div>
+            </div>
+              </div>
+        
+        <div id="edit_produk" class="hideit wadah mt2 gradasi-kuning">
+          Untuk manage Program dan Paket-paketnya silahkan menuju laman <a href="http://localhost/mcu/?manage-paket">Manage Paket</a>.
+        </div>
+      
+  </div>
+</section>
+  <section id="tim" class="tim p0">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Dokter dan Team</h2>
+        <p>Perkenalkan kami adalah Para Dokter Professional dan juga Tim Medis berpengalaman.</p>
+      </div>
+
+      <div class="row">
+        
+      <div class="col-lg-6">
+        <div class="member d-flex align-items-start">
+          <div class="piczzz"><img src="index_files/ahmad.jpg" class="img-tim" alt="ahmad.jpg"></div>
+          <div class="member-info">
+            <h4>Dr. Ahmad Nurkamali AZ, M.M.</h4>
+            <span>Komisaris Utama PT. MMC</span>
+            <p>Selamat datang di Mutiara Medical Center Semoga Anda mendapat pelayanan yang terbaik dari kami.</p>
+            <div class="social">
+              <div onclick='alert("Maaf, saudara/i Dr. Ahmad Nurkamali AZ, M.M. belum memasukan data twitter-nya.")'><i class="ri-twitter-fill"></i></div>
+              <div onclick='alert("Maaf, saudara/i Dr. Ahmad Nurkamali AZ, M.M. belum memasukan data facebook-nya.")'><i class="ri-facebook-fill"></i></div>
+              <div onclick='alert("Maaf, saudara/i Dr. Ahmad Nurkamali AZ, M.M. belum memasukan data instagram-nya.")'><i class="ri-instagram-fill"></i></div>
+              <div onclick='alert("Maaf, saudara/i Dr. Ahmad Nurkamali AZ, M.M. belum memasukan data linkedin-nya.")'><i class="ri-linkedin-fill"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-lg-6">
+        <div class="member d-flex align-items-start">
+          <div class="piczzz"><img src="index_files/iin.jpg" class="img-tim" alt="iin.jpg"></div>
+          <div class="member-info">
+            <h4>Iin Sholihin, S.T., M.Kom., MT</h4>
+            <span>IT Support dan Programmer</span>
+            <p>Otomatisasi medis dengan Teknologi Informasi membuat 
+proses dan reporting medis terpantau dari smartphone Anda serta rekam 
+medis anda terjaga datanya dengan baik.</p>
+            <div class="social">
+              <div onclick='alert("Maaf, saudara/i Iin Sholihin, S.T., M.Kom., MT belum memasukan data twitter-nya.")'><i class="ri-twitter-fill"></i></div>
+              <div onclick='alert("Maaf, saudara/i Iin Sholihin, S.T., M.Kom., MT belum memasukan data facebook-nya.")'><i class="ri-facebook-fill"></i></div>
+              <div onclick='alert("Maaf, saudara/i Iin Sholihin, S.T., M.Kom., MT belum memasukan data instagram-nya.")'><i class="ri-instagram-fill"></i></div>
+              <div onclick='alert("Maaf, saudara/i Iin Sholihin, S.T., M.Kom., MT belum memasukan data linkedin-nya.")'><i class="ri-linkedin-fill"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-lg-6">
+        <div class="member d-flex align-items-start">
+          <div class="piczzz"><img src="index_files/mutiara.jpg" class="img-tim" alt="mutiara.jpg"></div>
+          <div class="member-info">
+            <h4>dr. Mutiara Putri Camelia</h4>
+            <span>Direktur PT. MMC</span>
+            <p>Kehadiran Mutiara Medical Center menjadi solusi pelayanan kesehatan anda.</p>
+            <div class="social">
+              <div onclick='alert("Maaf, saudara/i dr. Mutiara Putri Camelia belum memasukan data twitter-nya.")'><i class="ri-twitter-fill"></i></div>
+              <div onclick='alert("Maaf, saudara/i dr. Mutiara Putri Camelia belum memasukan data facebook-nya.")'><i class="ri-facebook-fill"></i></div>
+              <div onclick='alert("Maaf, saudara/i dr. Mutiara Putri Camelia belum memasukan data instagram-nya.")'><i class="ri-instagram-fill"></i></div>
+              <div onclick='alert("Maaf, saudara/i dr. Mutiara Putri Camelia belum memasukan data linkedin-nya.")'><i class="ri-linkedin-fill"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-lg-6">
+        <div class="member d-flex align-items-start">
+          <div class="piczzz"><img src="index_files/nila.jpg" class="img-tim" alt="nila.jpg"></div>
+          <div class="member-info">
+            <h4>Nila Rosita</h4>
+            <span>Manager Keuangan</span>
+            <p>Dengan Biaya yang terjangkau anda mendapatkan pelayanan kesehatan yang akurat profesional dan selalu diingat di hati.</p>
+            <div class="social">
+              <div onclick='alert("Maaf, saudara/i Nila Rosita belum memasukan data twitter-nya.")'><i class="ri-twitter-fill"></i></div>
+              <div onclick='alert("Maaf, saudara/i Nila Rosita belum memasukan data facebook-nya.")'><i class="ri-facebook-fill"></i></div>
+              <div onclick='alert("Maaf, saudara/i Nila Rosita belum memasukan data instagram-nya.")'><i class="ri-instagram-fill"></i></div>
+              <div onclick='alert("Maaf, saudara/i Nila Rosita belum memasukan data linkedin-nya.")'><i class="ri-linkedin-fill"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-lg-6">
+        <div class="member d-flex align-items-start">
+          <div class="piczzz"><img src="index_files/meyda.jpg" class="img-tim" alt="meyda.jpg"></div>
+          <div class="member-info">
+            <h4>Almeyda Putra Herdian, S.Kom</h4>
+            <span>Staf Marketing</span>
+            <p>Kami siap bekerjasaa dengan perusahan-perusahaan dalam 
+memberikan pelayanan Medical Check Up dengan on-site dan harga yang 
+sangat bersahabat.</p>
+            <div class="social">
+              <div onclick='alert("Maaf, saudara/i Almeyda Putra Herdian, S.Kom belum memasukan data twitter-nya.")'><i class="ri-twitter-fill"></i></div>
+              <div onclick='alert("Maaf, saudara/i Almeyda Putra Herdian, S.Kom belum memasukan data facebook-nya.")'><i class="ri-facebook-fill"></i></div>
+              <div onclick='alert("Maaf, saudara/i Almeyda Putra Herdian, S.Kom belum memasukan data instagram-nya.")'><i class="ri-instagram-fill"></i></div>
+              <div onclick='alert("Maaf, saudara/i Almeyda Putra Herdian, S.Kom belum memasukan data linkedin-nya.")'><i class="ri-linkedin-fill"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-lg-6">
+        <div class="member d-flex align-items-start">
+          <div class="piczzz"><img src="index_files/heru.jpg" class="img-tim" alt="heru.jpg"></div>
+          <div class="member-info">
+            <h4>Heru Susanto</h4>
+            <span>Manager Kepegawaian</span>
+            <p>Kami didukung oleh tenaga medis dan non medis yang profesional, legal dan ramah</p>
+            <div class="social">
+              <div onclick='alert("Maaf, saudara/i Heru Susanto belum memasukan data twitter-nya.")'><i class="ri-twitter-fill"></i></div>
+              <div onclick='alert("Maaf, saudara/i Heru Susanto belum memasukan data facebook-nya.")'><i class="ri-facebook-fill"></i></div>
+              <div onclick='alert("Maaf, saudara/i Heru Susanto belum memasukan data instagram-nya.")'><i class="ri-instagram-fill"></i></div>
+              <div onclick='alert("Maaf, saudara/i Heru Susanto belum memasukan data linkedin-nya.")'><i class="ri-linkedin-fill"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      </div>
+          
+        <div id="edit_produk" class="hideit wadah mt2 gradasi-kuning">
+          Untuk manage Program dan Paket-paketnya silahkan menuju laman <a href="http://localhost/mcu/?manage-paket">Manage Paket</a>.
+        </div>
+      
+
+    </div>
+  </section>
+<section id="gallery" class="gallery p0">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Gallery</h2>
+      <p>Berikut adalah kegiatan kami saat proses Medical Checkup</p>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row g-0">
+      
+    <div class="col-lg-3 col-md-4">
+      <div class="gallery-item">
+        <a href="http://localhost/mcu/assets/img/gallery/gallery-2.jpg" class="galelry-lightbox">
+          <img src="index_files/gallery-2.jpg" alt="gallery-" class="img-fluid">
+        </a>
+      </div>
+    </div>
+
+  
+    <div class="col-lg-3 col-md-4">
+      <div class="gallery-item">
+        <a href="http://localhost/mcu/assets/img/gallery/gallery-3.jpg" class="galelry-lightbox">
+          <img src="index_files/gallery-3.jpg" alt="gallery-" class="img-fluid">
+        </a>
+      </div>
+    </div>
+
+  
+    <div class="col-lg-3 col-md-4">
+      <div class="gallery-item">
+        <a href="http://localhost/mcu/assets/img/gallery/gallery-5.jpg" class="galelry-lightbox">
+          <img src="index_files/gallery-5.jpg" alt="gallery-" class="img-fluid">
+        </a>
+      </div>
+    </div>
+
+  
+    <div class="col-lg-3 col-md-4">
+      <div class="gallery-item">
+        <a href="http://localhost/mcu/assets/img/gallery/gallery-8-240503111532.jpg" class="galelry-lightbox">
+          <img src="index_files/gallery-8-240503111532-thumb.jpg" alt="gallery-" class="img-fluid">
+        </a>
+      </div>
+    </div>
+
+  
+    <div class="col-lg-3 col-md-4">
+      <div class="gallery-item">
+        <a href="http://localhost/mcu/assets/img/gallery/gallery-9-240503111606.jpg" class="galelry-lightbox">
+          <img src="index_files/gallery-9-240503111606-thumb.jpg" alt="gallery-" class="img-fluid">
+        </a>
+      </div>
+    </div>
+
+  
+    <div class="col-lg-3 col-md-4">
+      <div class="gallery-item">
+        <a href="http://localhost/mcu/assets/img/gallery/gallery-10-240503111634.jpg" class="galelry-lightbox">
+          <img src="index_files/gallery-10-240503111634-thumb.jpg" alt="gallery-" class="img-fluid">
+        </a>
+      </div>
+    </div>
+
+  
+    <div class="col-lg-3 col-md-4">
+      <div class="gallery-item">
+        <a href="http://localhost/mcu/assets/img/gallery/gallery-11-240503111659.jpg" class="galelry-lightbox">
+          <img src="index_files/gallery-11-240503111659-thumb.jpg" alt="gallery-" class="img-fluid">
+        </a>
+      </div>
+    </div>
+
+  
+    <div class="col-lg-3 col-md-4">
+      <div class="gallery-item">
+        <a href="http://localhost/mcu/assets/img/gallery/gallery-12-240503111749.jpg" class="galelry-lightbox">
+          <img src="index_files/gallery-12-240503111749-thumb.jpg" alt="gallery-" class="img-fluid">
+        </a>
+      </div>
+    </div>
+
+      </div>
+      </div>
+</section><style>
+  .img-zoom {
+    transition: .5s;
+    opacity: 60%;
+  }
+
+  .img-zoom:hover {
+    transform: scale(1.1);
+    opacity: 100%;
+  }
+</style>
+
+<section id="contact" class="contact">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Kontak</h2>
+      <p>Untuk perihal negosiasi harga, jenis pemeriksaan, atau tentang 
+proses MCU yang kurang jelas, dapat Anda tanyakan kepada Tim Marketing 
+kami via form berikut. Untuk alamat kantor kami adalah sebagai berikut:</p>
+    </div>
+  </div>
+
+  <div>
+
+    <div class="text-center" style="max-width: 400px; margin:auto">
+      <!-- <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe> -->
+
+      <a target="_blank" href="https://maps.app.goo.gl/Yss5W1xgCk6NQL9E9">
+        <img src="index_files/lokasi-kantor.png" alt="lokasi-kantor" class="img-fluid img-zoom">
+
+      </a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row mt-5">
+
+      <div class="col-lg-4">
+        <div class="info">
+          <div class="address">
+            <i class="bi bi-geo-alt"></i>
+            <h4>Lokasi:</h4>
+            <p>Tambun Business Park Blok C12, Jl. Raya Pantura, Tambun, Bekasi, Jawa Barat, Indonesia</p>
+          </div>
+
+          <div class="email">
+            <i class="bi bi-envelope"></i>
+            <h4>Email:</h4>
+            <p>info@mmc-clinic.com</p>
+          </div>
+
+          <div class="phone">
+            <i class="bi bi-phone"></i>
+            <h4>Telepon:</h4>
+            <p>021-8909 5776</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-lg-8 mt-5 mt-lg-0">
+
+        <div class="php-email-form">
+          <div class="form-group mt-3">
+            <input type="text" minlength="3" maxlength="30" name="nama_anda" class="form-control input-kontak" id="nama_anda" placeholder="Nama Anda..." required="">
+            <div class="f12 abu mt1 mb2 hideit" id="nama_anda_info">3 s.d 30 huruf</div>
+          </div>
+          <div class="form-group mt-3">
+            <input type="text" minlength="5" maxlength="50" class="form-control input-kontak" name="subject_pesan" id="subject_pesan" placeholder="Subject pesan..." required="">
+            <div class="f12 abu mt1 mb2 hideit" id="subject_pesan_info">Subject pesan antara 5 s.d 50 karakter</div>
+          </div>
+          <div class="form-group mt-3">
+            <textarea minlength="50" maxlength="500" class="form-control input-kontak mb2" name="isi_pesan" id="isi_pesan" rows="5" placeholder="Pesan atau pertanyaan yang ingin Anda sampaikan..." required=""></textarea>
+            <div class="f12 abu mt1 mb2 hideit" id="isi_pesan_info">Isi pesan antara 50 s.d 500 karakter</div>
+          </div>
+          <div class="text-center">
+            <button type="submit" id="btn_kirim_pesan2"><i class="bi bi-whatsapp"></i> Kirim ke Tim Marketing kami</button>
+            <button type="submit" id="btn_kirim_pesan" class="hideit" style="display: none;"><i class="bi bi-whatsapp"></i> Kirim ke Tim Marketing kami</button>
+            <div class="f12 abu mt1 mb2" id="btn_kirim_info">Silahkan isi dahulu semua field !</div>
+          </div>
+        </div>
+
+        <div class="bordered p2 hideit" id="blok_processing">
+          <div class="consolas abu">Processing message...</div>
+          <hr>
+          <div class="darkblue">Pesan Anda akan kami teruskan via 
+Whatsapp ke Tim Marketing. Jika pesan berhasil terkirim maka Anda akan 
+menerima pesan balasan dalam waktu dekat.</div>
+          <hr>
+          <div class="hijau">Terimakasih telah menghubungi kami !</div>
+        </div>
+
+      </div>
+
+    </div>
+    
+  </div>
+</section>
+
+<script>
+  function toTitleCase(str) {
+    return str.replace(
+      /\w\S*/g,
+      function(txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      }
+    );
+  }
+
+  $(function() {
+    $('.input-kontak').keyup(function() {
+      let nama_anda = $('#nama_anda').val();
+      let subject_pesan = $('#subject_pesan').val();
+      let isi_pesan = $('#isi_pesan').val();
+
+      if (nama_anda) {
+        if (nama_anda.length >= 3 && nama_anda.length <= 30) {
+          $('#nama_anda_info').fadeOut();
+        } else {
+          $('#nama_anda_info').show();
+          return;
+        }
+        $('#nama_anda').val(toTitleCase(nama_anda.replace(/[^a-zA-Z ]/g, '').replace('  ', ' ')));
+      }
+
+      if (subject_pesan) {
+        if (subject_pesan.length >= 5 && subject_pesan.length <= 50) {
+          $('#subject_pesan_info').fadeOut();
+        } else {
+          $('#subject_pesan_info').show();
+          return;
+        }
+        $('#subject_pesan').val(toTitleCase(subject_pesan.replace(/[^a-zA-Z0-9 ]/g, '').replace('  ', ' ')));
+      }
+
+      if (isi_pesan) {
+        if (isi_pesan.length >= 50 && isi_pesan.length <= 500) {
+          $('#isi_pesan_info').fadeOut();
+        } else {
+          $('#isi_pesan_info').text(`Anda baru mengetik ${isi_pesan.length} karakter, minimal 50 karakter`);
+          $('#isi_pesan_info').show();
+          return;
+        }
+        // $('#isi_pesan').val(isi_pesan.replace('  ', ' ').replace('<', '< '));
+      }
+
+      if (nama_anda && subject_pesan && isi_pesan) {
+
+        $('#btn_kirim_pesan2').hide()
+        $('#btn_kirim_pesan').fadeIn()
+        $('#btn_kirim_info').fadeOut()
+        console.log('OK');
+      } else {
+        $('#btn_kirim_info').text('Silahkan isi dahulu semua field !')
+        $('#btn_kirim_info').fadeIn()
+        $('#btn_kirim_pesan').hide();
+        $('#btn_kirim_pesan2').fadeIn();
+      }
+
+    });
+    $('.input-kontak').keyup();
+
+    $('#btn_kirim_pesan').click(function() {
+      $('.php-email-form').slideUp();
+      $('#blok_processing').slideDown();
+
+      let no_wa = $('#no_wa_marketing').text();
+      if (!no_wa) {
+        alert('nomor wa marketing undefined');
+        return;
+      }
+
+      let tgl = new Date();
+
+      let text_wa = `MESSAGE FROM CONTACT PAGE%0a%0aFrom: ${$('#nama_anda').val()}%0aSubject: ${$('#subject_pesan').val()}%0aPesan: ${$('#isi_pesan').val()}%0a%0a[MMC Information System, ${tgl}]`;
+
+      setTimeout(() => {
+        location.replace(`https://api.whatsapp.com/send?phone=${no_wa}&text=${text_wa}`)
+      }, 5000);
+    });
+  })
+</script><div class="debug">
+  <span class="consolas f18">DEBUG MODE IS ON</span><br>id_role: <span id="id_role">0</span><br>sebagai: <span id="sebagai">Pengunjung</span><br>id_user: <span id="id_user"></span><br>username: <span id="username"></span><br>nama_user: <span id="nama_user"></span>
+</div>  </main>
+
+  <footer id="footer">
+
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+
+        <!-- <div class="col-lg-3 col-md-6 footer-contact">
+          <h3>Mutiara MCU</h3>
+          <p>
+            A108 Adam Street <br>
+            New York, NY 535022<br>
+            United States 
+            <br><br>
+            <strong>Phone:</strong> 021-8909 5776<br>
+            <strong>Email:</strong> info@example.com<br>
+          </p>
+        </div> -->
+
+        <!-- <div class="col-lg-2 col-md-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Tentang us</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Paket MCU</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Our Paket MCU</h4>
+          <ul>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+          </ul>
+        </div> -->
+
+        <!-- <div class="col-lg-4 col-md-6 footer-newsletter">
+          <h4>Join Our Newsletter</h4>
+          <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+          <form action="" method="post">
+            <input type="email" name="email"><input type="submit" value="Subscribe">
+          </form>
+        </div> -->
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container d-md-flex py-4">
+
+    <div class="me-md-auto text-center text-md-start">
+      <div class="copyright">
+        © Copyright <strong><span>MMC Information System</span></strong>. All Rights Reserved
+      </div>
+      <style>
+        .credits,
+        .credits a {
+          color: #F1F7FD !important;
+        }
+      </style>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+    <div class="social-links text-center text-md-right pt-3 pt-md-0">
+      <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+      <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+      <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+      <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+      <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a> -->
+    </div>
+  </div>
+</footer><!-- End Footer -->
+  
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center active"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="index_files/purecounter_vanilla.js"></script>
+  <script src="index_files/bootstrap.bundle.min.js"></script>
+  <script src="index_files/glightbox.min.js"></script>
+  <script src="index_files/swiper-bundle.min.js"></script>
+  <script src="index_files/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="index_files/main.js"></script>
+
+
+
+
+
+
+<script>
+  $(function(){
+    let link_ajax = '';
+    let id_po = $('#id_po').text();
+    let tb = $('#tb').text();
+
+    $('.btn_aksi').click(function(){
+      let tid = $(this).prop('id');
+      let rid = tid.split('__');
+      let tb = rid[0];
+      let aksi = rid[1];
+      let id_item = rid[2] ?? '';
+      let kolom = rid[3] ?? '';
+
+      console.log(tb,aksi,id_item);
+
+      if(aksi=='delete_file'){
+        let y = confirm('Yakin untuk menghapus file ini?');
+        if(!y) return;
+        let file = rid[2];
+        let path = rid[3];
+        if(!file || !path){
+          console.log('EMPTY one of file or path', file, path);
+        }else{
+          link_ajax = `ajax/delete_file.php?path=${path}&file=${file}`;
+          console.log(' delete FILE with AJAX: ', link_ajax);
+          $.ajax({
+            url:link_ajax,
+            success:function(a){
+              if(a.trim()=='sukses'){
+                $('#'+tb).fadeOut();
+                console.log('source_'+tb+' hide');
+              }else{
+                alert('Tidak dapat menghapus file.');
+                console.log(a);
+              }
+            }
+          })
+
+        }
+      }else if(aksi=='delete'){
+        let y = confirm('Yakin untuk hapus?');
+        if(!y) return;
+
+        console.log('#source_'+tb+'__'+id_item);
+        if(id_item==''){
+          $('#source_'+tb).fadeOut();
+          console.log('hide '+'#source_'+tb);
+          $('#'+tb).fadeOut();
+          console.log('#'+tb+' NO AJAX DELETE');
+        }else{
+          $('#source_'+tb+'__'+id_item).fadeOut();
+          console.log('hide '+'#source_'+tb+'__'+id_item);
+          $('#'+tb+'__'+id_item).fadeOut();
+          console.log('hide '+'#'+tb+'__'+id_item);
+          // ====================================================
+          // AJAX DELETE
+          // ====================================================
+          link_ajax = `ajax/crud.php?tb=${tb}&aksi=delete&id=${id_item}`;
+          console.log(' delete with AJAX: ', link_ajax);
+
+          $.ajax({
+            url:link_ajax,
+            success:function(a){
+              if(a.trim()=='sukses'){
+                // location.reload(); //zzz
+                console.log('delete with AJAX sukses.');
+              }else{
+                alert(`Tidak dapat menghapus data ${tb}.`);
+                console.log(a);
+              }
+            }
+          })
+
+          // if(kolom!=''){
+          //   link_ajax = `ajax/crud.php?tb=${tb}&aksi=delete&id=${id_item}`;
+          //   console.log(' delete with AJAX: ', link_ajax);
+
+          //   $.ajax({
+          //     url:link_ajax,
+          //     success:function(a){
+          //       if(a.trim()=='sukses'){
+          //         location.reload(); //zzz
+          //       }else{
+          //         alert(`Tidak dapat menghapus data ${tb}.`);
+          //         console.log(a);
+          //       }
+          //     }
+          //   })
+          // }else{
+          //   console.log('not delete to from_db');
+
+          // }
+        }
+
+
+      }else if(aksi=='toggle' || aksi=='pra_tambah'){
+        if(id_item!=''){
+          $('#'+tb+'__'+id_item).slideToggle();
+          console.log('toggle #'+tb+'__'+id_item);
+        }else{
+          $('#'+tb).slideToggle(); 
+          console.log('toggle'+'#'+tb);
+        }
+      }else if(aksi=='close' || aksi=='cancel'){
+        if(id_item!=''){
+          let id = rid[2];
+          $('#'+tb+'__'+id).slideUp();
+          console.log('#'+tb+'__'+id+' slideUp');
+        }else{
+          $('#'+tb).slideUp();
+          console.log('#'+tb+' slideUp');
+        }
+      }else if(aksi=='tambah'){
+        console.log(aksi,tb);
+        link_ajax = `ajax/crud.php?tb=${tb}&aksi=insert&id=new`;
+        $.ajax({
+          url:link_ajax,
+          success:function(a){
+            if(a.trim()=='sukses'){
+              location.reload();
+            }else if(a.toLowerCase().search('Duplicate entry')){
+              alert(`Data NEW-${tb} sudah ada. Silahkan edit kontennya!`)
+              console.log(a);
+            }else{
+              alert(`Tidak dapat menambah ${tb} baru.`);
+              console.log(a);
+            }
+          }
+        })
+      }else if(aksi=='save_item' || aksi=='delete_item'){
+        // save item = add item ke list
+        // delete item = remove from list
+        if(aksi=='delete_item'){
+          let y = confirm('Yakin untuk hapus list-item?');
+          if(!y) return;
+        }
+
+        let kolom = rid[3];
+        // console.log(aksi, 'untuk', kolom, id_po);
+
+        if(id_po.length>0){
+          let z = document.getElementsByClassName(kolom);
+          let value_items = '';
+          let cid = '';
+          for (let i = 0; i < z.length; i++) {
+            if(id_item==i){
+              cid = i;
+              continue;
+            } 
+            value_items += z[i].innerText + ' ___';
+            console.log('LOOP =======',value_items);
+          }
+  
+          if(aksi=='save_item'){
+            value_items += $('#update_value__'+kolom+'__'+cid).val();
+          }
+          
+          value_items = value_items.replace(/\s\s+/g, ' ');
+          
+          console.log(value_items, kolom, id_po);
+          link_ajax = `ajax/crud.php?tb=po&aksi=update&id=${id_po}&kolom=${kolom}&value=${value_items}`;
+          console.log(link_ajax);
+
+          $.ajax({
+            url:link_ajax,
+            success:function(a){
+              if(a.trim()=='sukses'){
+                location.reload();
+              }else{
+                alert('Tidak bisa menyimpan item.');
+                console.log(a);
+              }
+            }
+          })
+
+        }
+
+      }else if(aksi=='simpan'){
+        let value = $('#input_'+kolom).val().replace(/\s\s+/g, ' ');
+        link_ajax = `ajax/crud.php?tb=${tb}&aksi=update&kolom=${kolom}&value=${value}&id=${id_po}`;
+        $.ajax({
+          url:link_ajax,
+          success:function(a){
+            if(a.trim()=='sukses'){
+              // location.reload();
+              $('#edit_'+kolom).slideUp();
+              $('#target_'+kolom).text(value);
+            }else{
+              alert('Tidak bisa menyimpan item.');
+              console.log(a);
+            }
+          }
+        })
+
+        console.log(id_po, kolom, value);
+      }else{
+        alert('Handler untuk aksi: '+aksi+" akan segera dibangun. Terimakasih sudah mencoba!");
+        console.log('Belum ada handler untuk aksi: '+aksi);
+      }
+
+
+      
+    })
+  })
+</script><script>
+  function onDev() {
+    alert('Fitur ini masih dalam tahap pengembangan. Terimakasih sudah mencoba!');
+  }
+  $(function() {
+    $('.on-dev').click(function() {
+      onDev()
+    })
+  })
+</script></body></html>
+<!-- versi 1.0.0 -->
